@@ -1,7 +1,9 @@
 import os
 
 colors = {
-    'red' : "\033[93m",
+    'red' : "\033[91m",
+    'green' : "\033[92m",
+    'yellow' : "\033[93m",
     'base' : "\033[0m"
 }
 
@@ -19,6 +21,6 @@ def find_word_in_files(str_to_find):
             for line in lines:
                 if str_to_find in line:
                     matched_line_prettified = line.replace(
-                        str_to_find, f"{colors['red']}{str_to_find}{colors['base']}"
+                        str_to_find, f"{colors['green']}{str_to_find}{colors['base']}"
                     )
-                    print(matched_line_prettified)
+                    print(f"{file}:{matched_line_prettified}")
